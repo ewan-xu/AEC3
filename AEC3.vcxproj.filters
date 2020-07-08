@@ -1,0 +1,483 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="audio_processing">
+      <UniqueIdentifier>{543ed4ce-93b1-4f37-9f97-85e493542a24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_processing\utility">
+      <UniqueIdentifier>{5bfa6298-ae53-4dd1-bc35-150a560206f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_processing\logging">
+      <UniqueIdentifier>{345fbea9-6bc1-45cb-a86f-f5a95f9823de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_processing\aec3">
+      <UniqueIdentifier>{84332578-0b17-4c77-92fd-e5c4d3e87793}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_processing\include">
+      <UniqueIdentifier>{45d9278e-7ca9-422e-9cb1-976693b3cd81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_processing\resampler">
+      <UniqueIdentifier>{13b0466b-a3aa-482f-bf43-b4e06665ff62}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="audio_processing\audio_buffer.cc">
+      <Filter>audio_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\splitting_filter.cc">
+      <Filter>audio_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\three_band_filter_bank.cc">
+      <Filter>audio_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\utility\cascaded_biquad_filter.cc">
+      <Filter>audio_processing\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\utility\ooura_fft.cc">
+      <Filter>audio_processing\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\utility\ooura_fft_mips.cc">
+      <Filter>audio_processing\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\utility\ooura_fft_neon.cc">
+      <Filter>audio_processing\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\utility\ooura_fft_sse2.cc">
+      <Filter>audio_processing\utility</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\logging\apm_data_dumper.cc">
+      <Filter>audio_processing\logging</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\adaptive_fir_filter.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\adaptive_fir_filter_erl.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\aec_state.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\aec3_common.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\aec3_fft.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\alignment_mixer.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\api_call_jitter_metrics.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\block_buffer.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\block_delay_buffer.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\block_framer.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\block_processor.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\block_processor_metrics.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\clockdrift_detector.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\comfort_noise_generator.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\decimator.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\dominant_nearend_detector.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\downsampled_render_buffer.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\echo_audibility.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\echo_canceller3.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\echo_path_delay_estimator.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\echo_path_variability.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\echo_remover.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\echo_remover_metrics.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\erl_estimator.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\erle_estimator.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\fft_buffer.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\filter_analyzer.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\frame_blocker.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\fullband_erle_estimator.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\main_filter_update_gain.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\matched_filter.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\matched_filter_lag_aggregator.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\moving_average.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\render_buffer.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\render_delay_buffer.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\render_delay_controller.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\render_delay_controller_metrics.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\render_signal_analyzer.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\residual_echo_estimator.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\reverb_decay_estimator.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\reverb_frequency_response.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\reverb_model.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\reverb_model_estimator.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\shadow_filter_update_gain.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\signal_dependent_erle_estimator.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\spectrum_buffer.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\stationarity_estimator.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\subband_erle_estimator.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\subband_nearend_detector.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\subtractor.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\subtractor_output.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\subtractor_output_analyzer.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\suppression_filter.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\aec3\suppression_gain.cc">
+      <Filter>audio_processing\aec3</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\high_pass_filter.cc">
+      <Filter>audio_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\channel_buffer.cc">
+      <Filter>audio_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\sparse_fir_filter.cc">
+      <Filter>audio_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\resampler\push_sinc_resampler.cc">
+      <Filter>audio_processing\resampler</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\resampler\sinc_resampler.cc">
+      <Filter>audio_processing\resampler</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\resampler\sinc_resampler_neon.cc">
+      <Filter>audio_processing\resampler</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\resampler\sinc_resampler_sse.cc">
+      <Filter>audio_processing\resampler</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\logging\wav_file.cc">
+      <Filter>audio_processing\logging</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\logging\wav_header.cc">
+      <Filter>audio_processing\logging</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\splitting_filter_c.c">
+      <Filter>audio_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\channel_layout.cc">
+      <Filter>audio_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="audio_processing\audio_frame.cc">
+      <Filter>audio_processing</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="audio_processing\audio_buffer.h">
+      <Filter>audio_processing</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\splitting_filter.h">
+      <Filter>audio_processing</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\three_band_filter_bank.h">
+      <Filter>audio_processing</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\utility\cascaded_biquad_filter.h">
+      <Filter>audio_processing\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\utility\ooura_fft.h">
+      <Filter>audio_processing\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\utility\ooura_fft_tables_common.h">
+      <Filter>audio_processing\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\utility\ooura_fft_tables_neon_sse2.h">
+      <Filter>audio_processing\utility</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\logging\apm_data_dumper.h">
+      <Filter>audio_processing\logging</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\adaptive_fir_filter.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\adaptive_fir_filter_erl.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\aec_state.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\aec3_common.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\aec3_fft.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\alignment_mixer.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\api_call_jitter_metrics.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\block_buffer.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\block_delay_buffer.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\block_framer.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\block_processor.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\block_processor_metrics.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\clockdrift_detector.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\comfort_noise_generator.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\decimator.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\delay_estimate.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\dominant_nearend_detector.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\downsampled_render_buffer.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\echo_audibility.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\echo_canceller3.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\echo_path_delay_estimator.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\echo_path_variability.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\echo_remover.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\echo_remover_metrics.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\erl_estimator.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\erle_estimator.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\fft_buffer.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\fft_data.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\filter_analyzer.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\frame_blocker.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\fullband_erle_estimator.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\main_filter_update_gain.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\matched_filter.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\matched_filter_lag_aggregator.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\moving_average.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\nearend_detector.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\render_buffer.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\render_delay_buffer.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\render_delay_controller.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\render_delay_controller_metrics.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\render_signal_analyzer.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\residual_echo_estimator.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\reverb_decay_estimator.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\reverb_frequency_response.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\reverb_model.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\reverb_model_estimator.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\shadow_filter_update_gain.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\signal_dependent_erle_estimator.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\spectrum_buffer.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\stationarity_estimator.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\subband_erle_estimator.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\subband_nearend_detector.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\subtractor.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\subtractor_output.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\subtractor_output_analyzer.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\suppression_filter.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\suppression_gain.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\aec3\vector_math.h">
+      <Filter>audio_processing\aec3</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\include\audio_processing.h">
+      <Filter>audio_processing\include</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\high_pass_filter.h">
+      <Filter>audio_processing</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\channel_buffer.h">
+      <Filter>audio_processing</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\sparse_fir_filter.h">
+      <Filter>audio_processing</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\resampler\push_sinc_resampler.h">
+      <Filter>audio_processing\resampler</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\resampler\sinc_resampler.h">
+      <Filter>audio_processing\resampler</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\include\audio_util.h">
+      <Filter>audio_processing\include</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\logging\wav_file.h">
+      <Filter>audio_processing\logging</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\logging\wav_header.h">
+      <Filter>audio_processing\logging</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\channel_layout.h">
+      <Filter>audio_processing</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_processing\audio_frame.h">
+      <Filter>audio_processing</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

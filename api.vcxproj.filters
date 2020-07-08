@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="api">
+      <UniqueIdentifier>{3c7fd86a-aaf5-4b70-9a89-89ecf78fac3f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="api\echo_canceller3_config.cc">
+      <Filter>api</Filter>
+    </ClCompile>
+    <ClCompile Include="api\echo_canceller3_config_json.cc">
+      <Filter>api</Filter>
+    </ClCompile>
+    <ClCompile Include="api\echo_canceller3_factory.cc">
+      <Filter>api</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="api\echo_canceller3_config.h">
+      <Filter>api</Filter>
+    </ClInclude>
+    <ClInclude Include="api\echo_canceller3_config_json.h">
+      <Filter>api</Filter>
+    </ClInclude>
+    <ClInclude Include="api\echo_canceller3_factory.h">
+      <Filter>api</Filter>
+    </ClInclude>
+    <ClInclude Include="api\echo_control.h">
+      <Filter>api</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

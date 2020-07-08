@@ -1,0 +1,366 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="rtc_base">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="rtc_base\numerics">
+      <UniqueIdentifier>{467defae-3b30-48b1-9e70-51348a6ac824}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rtc_base\system">
+      <UniqueIdentifier>{096c7b42-dd07-4d67-af55-7673f93573a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rtc_base\strings">
+      <UniqueIdentifier>{92ba31d4-3aaa-4f96-8a9b-4f5ccb045100}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rtc_base\memory">
+      <UniqueIdentifier>{5148e8e4-407f-4ee6-a06a-f49dd24649a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="system_wrappers">
+      <UniqueIdentifier>{87175455-5786-4208-83be-dad1baca05f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="jsoncpp">
+      <UniqueIdentifier>{2761aa9c-6b7f-4670-bdf7-edfd5c86aa22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="jsoncpp\Header Files">
+      <UniqueIdentifier>{99003496-e818-4b3d-92db-1cdecaf86260}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="jsoncpp\Source Files">
+      <UniqueIdentifier>{57cb3bd2-ad46-49b8-8dfa-2d4e8e0d1a9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="jsoncpp\Public API">
+      <UniqueIdentifier>{b9652da2-4cca-49bd-ac31-c08b1c249e95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="absl">
+      <UniqueIdentifier>{2de807a6-b817-490f-b20b-d6ff5bcae9be}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="absl\bad_optional_access">
+      <UniqueIdentifier>{00ca39fa-717a-49db-a255-a28d2840c1db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="absl\strings">
+      <UniqueIdentifier>{f242ba37-7766-43f9-91ee-5aa3eee664f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="absl\strings\Header Files">
+      <UniqueIdentifier>{92e24cf5-f0d4-47e2-8a8f-f1c7a5dcd38b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="absl\strings\Source Files">
+      <UniqueIdentifier>{9ba374ad-9068-4b42-8ad4-99e3a2d444bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="absl\throw_delegate">
+      <UniqueIdentifier>{74da6884-9209-4720-baf0-0f1ffe73ab86}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="base\system_wrappers\include\cpu_features_wrapper.h">
+      <Filter>system_wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="base\system_wrappers\include\field_trial.h">
+      <Filter>system_wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="base\system_wrappers\include\metrics.h">
+      <Filter>system_wrappers</Filter>
+    </ClInclude>
+    <ClInclude Include="base\rtc_base\memory\aligned_malloc.h">
+      <Filter>rtc_base\memory</Filter>
+    </ClInclude>
+    <ClInclude Include="base\rtc_base\numerics\safe_compare.h">
+      <Filter>rtc_base\numerics</Filter>
+    </ClInclude>
+    <ClInclude Include="base\rtc_base\numerics\safe_conversions.h">
+      <Filter>rtc_base\numerics</Filter>
+    </ClInclude>
+    <ClInclude Include="base\rtc_base\numerics\safe_conversions_impl.h">
+      <Filter>rtc_base\numerics</Filter>
+    </ClInclude>
+    <ClInclude Include="base\rtc_base\numerics\safe_minmax.h">
+      <Filter>rtc_base\numerics</Filter>
+    </ClInclude>
+    <ClInclude Include="base\rtc_base\strings\json.h">
+      <Filter>rtc_base\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="base\rtc_base\strings\string_builder.h">
+      <Filter>rtc_base\strings</Filter>
+    </ClInclude>
+    <ClInclude Include="base\rtc_base\system\arch.h">
+      <Filter>rtc_base\system</Filter>
+    </ClInclude>
+    <ClInclude Include="base\rtc_base\system\file_wrapper.h">
+      <Filter>rtc_base\system</Filter>
+    </ClInclude>
+    <ClInclude Include="base\rtc_base\system\inline.h">
+      <Filter>rtc_base\system</Filter>
+    </ClInclude>
+    <ClInclude Include="base\rtc_base\system\rtc_export.h">
+      <Filter>rtc_base\system</Filter>
+    </ClInclude>
+    <ClInclude Include="base\rtc_base\system\unused.h">
+      <Filter>rtc_base\system</Filter>
+    </ClInclude>
+    <ClInclude Include="base\rtc_base\array_view.h">
+      <Filter>rtc_base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\rtc_base\arraysize.h">
+      <Filter>rtc_base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\rtc_base\atomic_ops.h">
+      <Filter>rtc_base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\rtc_base\checks.h">
+      <Filter>rtc_base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\rtc_base\constructor_magic.h">
+      <Filter>rtc_base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\rtc_base\critical_section.h">
+      <Filter>rtc_base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\rtc_base\gtest_prod_util.h">
+      <Filter>rtc_base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\rtc_base\logging.h">
+      <Filter>rtc_base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\rtc_base\platform_thread_types.h">
+      <Filter>rtc_base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\rtc_base\race_checker.h">
+      <Filter>rtc_base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\rtc_base\sanitizer.h">
+      <Filter>rtc_base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\rtc_base\string_encode.h">
+      <Filter>rtc_base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\rtc_base\string_to_number.h">
+      <Filter>rtc_base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\rtc_base\string_utils.h">
+      <Filter>rtc_base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\rtc_base\swap_queue.h">
+      <Filter>rtc_base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\rtc_base\thread_annotations.h">
+      <Filter>rtc_base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\rtc_base\time_utils.h">
+      <Filter>rtc_base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\rtc_base\type_traits.h">
+      <Filter>rtc_base</Filter>
+    </ClInclude>
+    <ClInclude Include="base\jsoncpp\include\json\assertions.h">
+      <Filter>jsoncpp\Public API</Filter>
+    </ClInclude>
+    <ClInclude Include="base\jsoncpp\include\json\autolink.h">
+      <Filter>jsoncpp\Public API</Filter>
+    </ClInclude>
+    <ClInclude Include="base\jsoncpp\include\json\config.h">
+      <Filter>jsoncpp\Public API</Filter>
+    </ClInclude>
+    <ClInclude Include="base\jsoncpp\include\json\features.h">
+      <Filter>jsoncpp\Public API</Filter>
+    </ClInclude>
+    <ClInclude Include="base\jsoncpp\include\json\forwards.h">
+      <Filter>jsoncpp\Public API</Filter>
+    </ClInclude>
+    <ClInclude Include="base\jsoncpp\include\json\json.h">
+      <Filter>jsoncpp\Public API</Filter>
+    </ClInclude>
+    <ClInclude Include="base\jsoncpp\include\json\reader.h">
+      <Filter>jsoncpp\Public API</Filter>
+    </ClInclude>
+    <ClInclude Include="base\jsoncpp\include\json\value.h">
+      <Filter>jsoncpp\Public API</Filter>
+    </ClInclude>
+    <ClInclude Include="base\jsoncpp\include\json\version.h">
+      <Filter>jsoncpp\Public API</Filter>
+    </ClInclude>
+    <ClInclude Include="base\jsoncpp\include\json\writer.h">
+      <Filter>jsoncpp\Public API</Filter>
+    </ClInclude>
+    <ClInclude Include="base\jsoncpp\src\lib_json\json_batchallocator.h">
+      <Filter>jsoncpp\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="base\jsoncpp\src\lib_json\json_tool.h">
+      <Filter>jsoncpp\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="base\abseil\absl\types\bad_optional_access.h">
+      <Filter>absl\bad_optional_access</Filter>
+    </ClInclude>
+    <ClInclude Include="base\abseil\absl\strings\internal\charconv_bigint.h">
+      <Filter>absl\strings\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="base\abseil\absl\strings\internal\charconv_parse.h">
+      <Filter>absl\strings\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="base\abseil\absl\strings\internal\memutil.h">
+      <Filter>absl\strings\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="base\abseil\absl\strings\internal\stl_type_traits.h">
+      <Filter>absl\strings\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="base\abseil\absl\strings\internal\str_join_internal.h">
+      <Filter>absl\strings\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="base\abseil\absl\strings\internal\str_split_internal.h">
+      <Filter>absl\strings\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="base\abseil\absl\strings\ascii.h">
+      <Filter>absl\strings\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="base\abseil\absl\strings\charconv.h">
+      <Filter>absl\strings\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="base\abseil\absl\strings\escaping.h">
+      <Filter>absl\strings\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="base\abseil\absl\strings\match.h">
+      <Filter>absl\strings\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="base\abseil\absl\strings\numbers.h">
+      <Filter>absl\strings\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="base\abseil\absl\strings\str_cat.h">
+      <Filter>absl\strings\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="base\abseil\absl\strings\str_format.h">
+      <Filter>absl\strings\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="base\abseil\absl\strings\str_join.h">
+      <Filter>absl\strings\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="base\abseil\absl\strings\str_replace.h">
+      <Filter>absl\strings\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="base\abseil\absl\strings\str_split.h">
+      <Filter>absl\strings\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="base\abseil\absl\strings\string_view.h">
+      <Filter>absl\strings\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="base\abseil\absl\strings\substitute.h">
+      <Filter>absl\strings\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="base\abseil\absl\base\internal\throw_delegate.h">
+      <Filter>absl\throw_delegate</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="base\system_wrappers\source\cpu_features.cc">
+      <Filter>system_wrappers</Filter>
+    </ClCompile>
+    <ClCompile Include="base\system_wrappers\source\cpu_features_android.c">
+      <Filter>system_wrappers</Filter>
+    </ClCompile>
+    <ClCompile Include="base\system_wrappers\source\cpu_features_linux.c">
+      <Filter>system_wrappers</Filter>
+    </ClCompile>
+    <ClCompile Include="base\system_wrappers\source\field_trial.cc">
+      <Filter>system_wrappers</Filter>
+    </ClCompile>
+    <ClCompile Include="base\system_wrappers\source\metrics.cc">
+      <Filter>system_wrappers</Filter>
+    </ClCompile>
+    <ClCompile Include="base\rtc_base\memory\aligned_malloc.cc">
+      <Filter>rtc_base\memory</Filter>
+    </ClCompile>
+    <ClCompile Include="base\rtc_base\strings\json.cc">
+      <Filter>rtc_base\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="base\rtc_base\strings\string_builder.cc">
+      <Filter>rtc_base\strings</Filter>
+    </ClCompile>
+    <ClCompile Include="base\rtc_base\system\file_wrapper.cc">
+      <Filter>rtc_base\system</Filter>
+    </ClCompile>
+    <ClCompile Include="base\rtc_base\checks.cc">
+      <Filter>rtc_base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\rtc_base\critical_section.cc">
+      <Filter>rtc_base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\rtc_base\logging.cc">
+      <Filter>rtc_base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\rtc_base\platform_thread_types.cc">
+      <Filter>rtc_base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\rtc_base\race_checker.cc">
+      <Filter>rtc_base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\rtc_base\string_encode.cc">
+      <Filter>rtc_base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\rtc_base\string_to_number.cc">
+      <Filter>rtc_base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\rtc_base\string_utils.cc">
+      <Filter>rtc_base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\rtc_base\time_utils.cc">
+      <Filter>rtc_base</Filter>
+    </ClCompile>
+    <ClCompile Include="base\jsoncpp\src\lib_json\json_reader.cpp">
+      <Filter>jsoncpp\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="base\jsoncpp\src\lib_json\json_value.cpp">
+      <Filter>jsoncpp\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="base\jsoncpp\src\lib_json\json_writer.cpp">
+      <Filter>jsoncpp\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="base\abseil\absl\types\bad_optional_access.cc">
+      <Filter>absl\bad_optional_access</Filter>
+    </ClCompile>
+    <ClCompile Include="base\abseil\absl\strings\internal\charconv_bigint.cc">
+      <Filter>absl\strings\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="base\abseil\absl\strings\internal\charconv_parse.cc">
+      <Filter>absl\strings\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="base\abseil\absl\strings\internal\memutil.cc">
+      <Filter>absl\strings\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="base\abseil\absl\strings\ascii.cc">
+      <Filter>absl\strings\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="base\abseil\absl\strings\charconv.cc">
+      <Filter>absl\strings\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="base\abseil\absl\strings\escaping.cc">
+      <Filter>absl\strings\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="base\abseil\absl\strings\match.cc">
+      <Filter>absl\strings\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="base\abseil\absl\strings\numbers.cc">
+      <Filter>absl\strings\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="base\abseil\absl\strings\str_cat.cc">
+      <Filter>absl\strings\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="base\abseil\absl\strings\str_replace.cc">
+      <Filter>absl\strings\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="base\abseil\absl\strings\str_split.cc">
+      <Filter>absl\strings\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="base\abseil\absl\strings\string_view.cc">
+      <Filter>absl\strings\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="base\abseil\absl\strings\substitute.cc">
+      <Filter>absl\strings\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="base\abseil\absl\base\internal\throw_delegate.cc">
+      <Filter>absl\throw_delegate</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="base\jsoncpp\src\lib_json\json_valueiterator.inl">
+      <Filter>jsoncpp\Header Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

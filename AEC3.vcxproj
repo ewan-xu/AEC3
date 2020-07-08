@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="audio_processing\aec3\adaptive_fir_filter.cc" />
+    <ClCompile Include="audio_processing\aec3\adaptive_fir_filter_erl.cc" />
+    <ClCompile Include="audio_processing\aec3\aec3_common.cc" />
+    <ClCompile Include="audio_processing\aec3\aec3_fft.cc" />
+    <ClCompile Include="audio_processing\aec3\aec_state.cc" />
+    <ClCompile Include="audio_processing\aec3\alignment_mixer.cc" />
+    <ClCompile Include="audio_processing\aec3\api_call_jitter_metrics.cc" />
+    <ClCompile Include="audio_processing\aec3\block_buffer.cc" />
+    <ClCompile Include="audio_processing\aec3\block_delay_buffer.cc" />
+    <ClCompile Include="audio_processing\aec3\block_framer.cc" />
+    <ClCompile Include="audio_processing\aec3\block_processor.cc" />
+    <ClCompile Include="audio_processing\aec3\block_processor_metrics.cc" />
+    <ClCompile Include="audio_processing\aec3\clockdrift_detector.cc" />
+    <ClCompile Include="audio_processing\aec3\comfort_noise_generator.cc" />
+    <ClCompile Include="audio_processing\aec3\decimator.cc" />
+    <ClCompile Include="audio_processing\aec3\dominant_nearend_detector.cc" />
+    <ClCompile Include="audio_processing\aec3\downsampled_render_buffer.cc" />
+    <ClCompile Include="audio_processing\aec3\echo_audibility.cc" />
+    <ClCompile Include="audio_processing\aec3\echo_canceller3.cc" />
+    <ClCompile Include="audio_processing\aec3\echo_path_delay_estimator.cc" />
+    <ClCompile Include="audio_processing\aec3\echo_path_variability.cc" />
+    <ClCompile Include="audio_processing\aec3\echo_remover.cc" />
+    <ClCompile Include="audio_processing\aec3\echo_remover_metrics.cc" />
+    <ClCompile Include="audio_processing\aec3\erle_estimator.cc" />
+    <ClCompile Include="audio_processing\aec3\erl_estimator.cc" />
+    <ClCompile Include="audio_processing\aec3\fft_buffer.cc" />
+    <ClCompile Include="audio_processing\aec3\filter_analyzer.cc" />
+    <ClCompile Include="audio_processing\aec3\frame_blocker.cc" />
+    <ClCompile Include="audio_processing\aec3\fullband_erle_estimator.cc" />
+    <ClCompile Include="audio_processing\aec3\main_filter_update_gain.cc" />
+    <ClCompile Include="audio_processing\aec3\matched_filter.cc" />
+    <ClCompile Include="audio_processing\aec3\matched_filter_lag_aggregator.cc" />
+    <ClCompile Include="audio_processing\aec3\moving_average.cc" />
+    <ClCompile Include="audio_processing\aec3\render_buffer.cc" />
+    <ClCompile Include="audio_processing\aec3\render_delay_buffer.cc" />
+    <ClCompile Include="audio_processing\aec3\render_delay_controller.cc" />
+    <ClCompile Include="audio_processing\aec3\render_delay_controller_metrics.cc" />
+    <ClCompile Include="audio_processing\aec3\render_signal_analyzer.cc" />
+    <ClCompile Include="audio_processing\aec3\residual_echo_estimator.cc" />
+    <ClCompile Include="audio_processing\aec3\reverb_decay_estimator.cc" />
+    <ClCompile Include="audio_processing\aec3\reverb_frequency_response.cc" />
+    <ClCompile Include="audio_processing\aec3\reverb_model.cc" />
+    <ClCompile Include="audio_processing\aec3\reverb_model_estimator.cc" />
+    <ClCompile Include="audio_processing\aec3\shadow_filter_update_gain.cc" />
+    <ClCompile Include="audio_processing\aec3\signal_dependent_erle_estimator.cc" />
+    <ClCompile Include="audio_processing\aec3\spectrum_buffer.cc" />
+    <ClCompile Include="audio_processing\aec3\stationarity_estimator.cc" />
+    <ClCompile Include="audio_processing\aec3\subband_erle_estimator.cc" />
+    <ClCompile Include="audio_processing\aec3\subband_nearend_detector.cc" />
+    <ClCompile Include="audio_processing\aec3\subtractor.cc" />
+    <ClCompile Include="audio_processing\aec3\subtractor_output.cc" />
+    <ClCompile Include="audio_processing\aec3\subtractor_output_analyzer.cc" />
+    <ClCompile Include="audio_processing\aec3\suppression_filter.cc" />
+    <ClCompile Include="audio_processing\aec3\suppression_gain.cc" />
+    <ClCompile Include="audio_processing\audio_buffer.cc" />
+    <ClCompile Include="audio_processing\audio_frame.cc" />
+    <ClCompile Include="audio_processing\channel_buffer.cc" />
+    <ClCompile Include="audio_processing\channel_layout.cc" />
+    <ClCompile Include="audio_processing\high_pass_filter.cc" />
+    <ClCompile Include="audio_processing\logging\apm_data_dumper.cc" />
+    <ClCompile Include="audio_processing\logging\wav_file.cc" />
+    <ClCompile Include="audio_processing\logging\wav_header.cc" />
+    <ClCompile Include="audio_processing\resampler\push_sinc_resampler.cc" />
+    <ClCompile Include="audio_processing\resampler\sinc_resampler.cc" />
+    <ClCompile Include="audio_processing\resampler\sinc_resampler_neon.cc" />
+    <ClCompile Include="audio_processing\resampler\sinc_resampler_sse.cc" />
+    <ClCompile Include="audio_processing\sparse_fir_filter.cc" />
+    <ClCompile Include="audio_processing\splitting_filter_c.c" />
+    <ClCompile Include="audio_processing\splitting_filter.cc" />
+    <ClCompile Include="audio_processing\three_band_filter_bank.cc" />
+    <ClCompile Include="audio_processing\utility\cascaded_biquad_filter.cc" />
+    <ClCompile Include="audio_processing\utility\ooura_fft.cc" />
+    <ClCompile Include="audio_processing\utility\ooura_fft_mips.cc" />
+    <ClCompile Include="audio_processing\utility\ooura_fft_neon.cc" />
+    <ClCompile Include="audio_processing\utility\ooura_fft_sse2.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="audio_processing\aec3\adaptive_fir_filter.h" />
+    <ClInclude Include="audio_processing\aec3\adaptive_fir_filter_erl.h" />
+    <ClInclude Include="audio_processing\aec3\aec3_common.h" />
+    <ClInclude Include="audio_processing\aec3\aec3_fft.h" />
+    <ClInclude Include="audio_processing\aec3\aec_state.h" />
+    <ClInclude Include="audio_processing\aec3\alignment_mixer.h" />
+    <ClInclude Include="audio_processing\aec3\api_call_jitter_metrics.h" />
+    <ClInclude Include="audio_processing\aec3\block_buffer.h" />
+    <ClInclude Include="audio_processing\aec3\block_delay_buffer.h" />
+    <ClInclude Include="audio_processing\aec3\block_framer.h" />
+    <ClInclude Include="audio_processing\aec3\block_processor.h" />
+    <ClInclude Include="audio_processing\aec3\block_processor_metrics.h" />
+    <ClInclude Include="audio_processing\aec3\clockdrift_detector.h" />
+    <ClInclude Include="audio_processing\aec3\comfort_noise_generator.h" />
+    <ClInclude Include="audio_processing\aec3\decimator.h" />
+    <ClInclude Include="audio_processing\aec3\delay_estimate.h" />
+    <ClInclude Include="audio_processing\aec3\dominant_nearend_detector.h" />
+    <ClInclude Include="audio_processing\aec3\downsampled_render_buffer.h" />
+    <ClInclude Include="audio_processing\aec3\echo_audibility.h" />
+    <ClInclude Include="audio_processing\aec3\echo_canceller3.h" />
+    <ClInclude Include="audio_processing\aec3\echo_path_delay_estimator.h" />
+    <ClInclude Include="audio_processing\aec3\echo_path_variability.h" />
+    <ClInclude Include="audio_processing\aec3\echo_remover.h" />
+    <ClInclude Include="audio_processing\aec3\echo_remover_metrics.h" />
+    <ClInclude Include="audio_processing\aec3\erle_estimator.h" />
+    <ClInclude Include="audio_processing\aec3\erl_estimator.h" />
+    <ClInclude Include="audio_processing\aec3\fft_buffer.h" />
+    <ClInclude Include="audio_processing\aec3\fft_data.h" />
+    <ClInclude Include="audio_processing\aec3\filter_analyzer.h" />
+    <ClInclude Include="audio_processing\aec3\frame_blocker.h" />
+    <ClInclude Include="audio_processing\aec3\fullband_erle_estimator.h" />
+    <ClInclude Include="audio_processing\aec3\main_filter_update_gain.h" />
+    <ClInclude Include="audio_processing\aec3\matched_filter.h" />
+    <ClInclude Include="audio_processing\aec3\matched_filter_lag_aggregator.h" />
+    <ClInclude Include="audio_processing\aec3\moving_average.h" />
+    <ClInclude Include="audio_processing\aec3\nearend_detector.h" />
+    <ClInclude Include="audio_processing\aec3\render_buffer.h" />
+    <ClInclude Include="audio_processing\aec3\render_delay_buffer.h" />
+    <ClInclude Include="audio_processing\aec3\render_delay_controller.h" />
+    <ClInclude Include="audio_processing\aec3\render_delay_controller_metrics.h" />
+    <ClInclude Include="audio_processing\aec3\render_signal_analyzer.h" />
+    <ClInclude Include="audio_processing\aec3\residual_echo_estimator.h" />
+    <ClInclude Include="audio_processing\aec3\reverb_decay_estimator.h" />
+    <ClInclude Include="audio_processing\aec3\reverb_frequency_response.h" />
+    <ClInclude Include="audio_processing\aec3\reverb_model.h" />
+    <ClInclude Include="audio_processing\aec3\reverb_model_estimator.h" />
+    <ClInclude Include="audio_processing\aec3\shadow_filter_update_gain.h" />
+    <ClInclude Include="audio_processing\aec3\signal_dependent_erle_estimator.h" />
+    <ClInclude Include="audio_processing\aec3\spectrum_buffer.h" />
+    <ClInclude Include="audio_processing\aec3\stationarity_estimator.h" />
+    <ClInclude Include="audio_processing\aec3\subband_erle_estimator.h" />
+    <ClInclude Include="audio_processing\aec3\subband_nearend_detector.h" />
+    <ClInclude Include="audio_processing\aec3\subtractor.h" />
+    <ClInclude Include="audio_processing\aec3\subtractor_output.h" />
+    <ClInclude Include="audio_processing\aec3\subtractor_output_analyzer.h" />
+    <ClInclude Include="audio_processing\aec3\suppression_filter.h" />
+    <ClInclude Include="audio_processing\aec3\suppression_gain.h" />
+    <ClInclude Include="audio_processing\aec3\vector_math.h" />
+    <ClInclude Include="audio_processing\audio_buffer.h" />
+    <ClInclude Include="audio_processing\audio_frame.h" />
+    <ClInclude Include="audio_processing\channel_buffer.h" />
+    <ClInclude Include="audio_processing\channel_layout.h" />
+    <ClInclude Include="audio_processing\high_pass_filter.h" />
+    <ClInclude Include="audio_processing\include\audio_processing.h" />
+    <ClInclude Include="audio_processing\include\audio_util.h" />
+    <ClInclude Include="audio_processing\logging\apm_data_dumper.h" />
+    <ClInclude Include="audio_processing\logging\wav_file.h" />
+    <ClInclude Include="audio_processing\logging\wav_header.h" />
+    <ClInclude Include="audio_processing\resampler\push_sinc_resampler.h" />
+    <ClInclude Include="audio_processing\resampler\sinc_resampler.h" />
+    <ClInclude Include="audio_processing\sparse_fir_filter.h" />
+    <ClInclude Include="audio_processing\splitting_filter.h" />
+    <ClInclude Include="audio_processing\three_band_filter_bank.h" />
+    <ClInclude Include="audio_processing\utility\cascaded_biquad_filter.h" />
+    <ClInclude Include="audio_processing\utility\ooura_fft.h" />
+    <ClInclude Include="audio_processing\utility\ooura_fft_tables_common.h" />
+    <ClInclude Include="audio_processing\utility\ooura_fft_tables_neon_sse2.h" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2D2114D9-800B-4C74-A770-119325A6A00B}</ProjectGuid>
+    <RootNamespace>AEC3</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)output\$(Configuration)_$(Platform)\</OutDir>
+    <IntDir>$(OutDir)$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)output\$(Configuration)_$(Platform)\</OutDir>
+    <IntDir>$(OutDir)$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)output\$(Configuration)_$(Platform)\</OutDir>
+    <IntDir>$(OutDir)$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)output\$(Configuration)_$(Platform)\</OutDir>
+    <IntDir>$(OutDir)$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level1</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)base;$(SolutionDir)base\abseil;$(SolutionDir)base\jsoncpp\include;$(SolutionDir)audio_processing;$(SolutionDir)audio_processing\aec3</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WEBRTC_WIN;WIN32;_WINDOWS;_DEBUG;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;WIN32_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>false</MultiProcessorCompilation>
+      <MinimalRebuild>true</MinimalRebuild>
+      <DisableSpecificWarnings>4005;4068;4180;4244;4267;4503;4800</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(SolutionDir)libs\$(Configuration)_$(Platform)\</AdditionalLibraryDirectories>
+      <AdditionalDependencies>rtc_base.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)base;$(SolutionDir)base\abseil;$(SolutionDir)base\jsoncpp\include;$(SolutionDir)audio_processing;$(SolutionDir)audio_processing\aec3</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WEBRTC_WIN;WIN32;_WINDOWS;_DEBUG;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;WIN32_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <MinimalRebuild>false</MinimalRebuild>
+      <DisableSpecificWarnings>4005;4068;4180;4244;4267;4503;4800</DisableSpecificWarnings>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)base;$(SolutionDir)base\abseil;$(SolutionDir)base\jsoncpp\include;$(SolutionDir)audio_processing;$(SolutionDir)audio_processing\aec3</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WEBRTC_WIN;WIN32;_WINDOWS;DEBUG;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;WIN32_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DisableSpecificWarnings>4005;4068;4180;4244;4267;4503;4800</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir);$(SolutionDir)base;$(SolutionDir)base\abseil;$(SolutionDir)base\jsoncpp\include;$(SolutionDir)audio_processing;$(SolutionDir)audio_processing\aec3</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WEBRTC_WIN;WIN32;_WINDOWS;DEBUG;NOMINMAX;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;WIN32_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <DisableSpecificWarnings>4005;4068;4180;4244;4267;4503;4800</DisableSpecificWarnings>
+    </ClCompile>
+    <Link>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
