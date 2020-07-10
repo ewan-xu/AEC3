@@ -362,11 +362,15 @@ void AudioBuffer::CopyTo(AudioFrame* frame) const {
 }
 
 void AudioBuffer::SplitIntoFrequencyBands() {
-  splitting_filter_->Analysis(data_.get(), split_data_.get());
+  if (num_bands_ > 1){
+	splitting_filter_->Analysis(data_.get(), split_data_.get());
+  }
 }
 
 void AudioBuffer::MergeFrequencyBands() {
-  splitting_filter_->Synthesis(split_data_.get(), data_.get());
+  if (num_bands_ > 1) {
+    splitting_filter_->Synthesis(split_data_.get(), data_.get());
+  }
 }
 
 void AudioBuffer::ExportSplitChannelData(
