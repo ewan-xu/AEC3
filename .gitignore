@@ -1,0 +1,61 @@
+*.validationcache
+
+*.wsettings
+*.prof
+Foreign/speexdsp-1.2rc3/win32/VS2008/.vs/
+Foreign/speexdsp-1.2rc3/win32/VS2008/libspeexdsp/x64/
+*.vcxproj.user
+*.vcxproj.filters
+.vscode/*
+*.pdb
+
+# ignore windows shortcut files
+*.lnk
+/Updater/.idea
+*.vsconfig
+
+# ignore mac os files
+*.DS_Store
+artifacts/*
+*.xcuserstate
+
+/[Bb]uild/
+/[Bb]uilds/
+Profiler Data
+
+# Xcode Project
+**/*.xcodeproj/xcuserdata/
+**/*.xcworkspace/xcuserdata/
+**/*.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
+**/*.xcworkspace/xcshareddata/*.xccheckout
+**/*.xcworkspace/xcshareddata/*.xcscmblueprint
+.idea/
+
+# Build
+**/Builds
+**/JuceLibraryCode
+Scripts/build/
+build
+
+DerivedData/
+*.ipa
+
+# Other
+*~
+.DS_Store
+*.swp
+*.save
+._*
+*.bak
+
+# CMake
+CMake/
+cmake-build-debug/
+cmake-build-release/
+cmake-build-rel-with-debinfo/
+
+# Visual Studio
+.vs/
+
+# Custom Output Dir
+output/
