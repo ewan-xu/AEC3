@@ -91,7 +91,7 @@ int main(int argc, char* argv[])
 	EchoCanceller3Config aec_config;
 	aec_config.filter.export_linear_aec_output = true;
 	EchoCanceller3Factory aec_factory = EchoCanceller3Factory(aec_config);
-	std::unique_ptr<EchoControl> echo_controler = aec_factory.Create(ref_sample_rate, ref_channels, rec_channels);
+	std::unique_ptr<EchoControl> echo_controller = aec_factory.Create(ref_sample_rate, ref_channels, rec_channels);
 	std::unique_ptr<HighPassFilter> hp_filter = std::make_unique<HighPassFilter>(rec_sample_rate, rec_channels);
 
 	int sample_rate = rec_sample_rate;
@@ -99,15 +99,18 @@ int main(int argc, char* argv[])
 	int bits_per_sample = rec_bits_per_sample;
 	StreamConfig config = StreamConfig(sample_rate, channels, false);
 
+	//Audio which provides a reference on what (not) to cancel out
 	std::unique_ptr<AudioBuffer> ref_audio = std::make_unique<AudioBuffer>(
 		config.sample_rate_hz(), config.num_channels(),
 		config.sample_rate_hz(), config.num_channels(),
 		config.sample_rate_hz(), config.num_channels());
+	//The audio upon which cancellation should be applied (processes in-place)
 	std::unique_ptr<AudioBuffer> aec_audio = std::make_unique<AudioBuffer>(
 		config.sample_rate_hz(), config.num_channels(),
 		config.sample_rate_hz(), config.num_channels(),
 		config.sample_rate_hz(), config.num_channels());
 	constexpr int kLinearOutputRateHz = 16000;
+	//Another output for the linear filter
 	std::unique_ptr<AudioBuffer> aec_linear_audio = std::make_unique<AudioBuffer>(
 		kLinearOutputRateHz, config.num_channels(),
 		kLinearOutputRateHz, config.num_channels(),
@@ -129,6 +132,8 @@ int main(int argc, char* argv[])
 	while (current++ < total) 
 	{
 		print_progress(current, total);
+		//These methods appear to self-increment pointer offsets to each frame, via
+		//wr->data_length -= length;
 		wav_read_data(h_ref, ref_tmp, bytes_per_frame);
 		wav_read_data(h_rec, aec_tmp, bytes_per_frame);
 
@@ -137,15 +142,21 @@ int main(int argc, char* argv[])
 
 		ref_audio->CopyFrom(&ref_frame);
 		aec_audio->CopyFrom(&aec_frame);
-
+		//Time->Freq
 		ref_audio->SplitIntoFrequencyBands();
-		echo_controler->AnalyzeRender(ref_audio.get());
+		echo_controller->AnalyzeRender(ref_audio.get());
+		//Freq->Time
 		ref_audio->MergeFrequencyBands();
-		echo_controler->AnalyzeCapture(aec_audio.get());
+		echo_controller->AnalyzeCapture(aec_audio.get());
+		//Time->Freq
 		aec_audio->SplitIntoFrequencyBands();
+		//Nyquist based on sample rate
 		hp_filter->Process(aec_audio.get(), true);
-		echo_controler->SetAudioBufferDelay(0);
-		echo_controler->ProcessCapture(aec_audio.get(), aec_linear_audio.get(), false);
+		//Critical to apply non-0 value here if fixed minimum latency is known
+		echo_controller->SetAudioBufferDelay(0);
+		//Opt. for streaming: No need to render linear filter output
+		echo_controller->ProcessCapture(aec_audio.get(), aec_linear_audio.get(), false);
+		//Freq->Time
 		aec_audio->MergeFrequencyBands();
 
 		aec_audio->CopyTo(&aec_frame);
