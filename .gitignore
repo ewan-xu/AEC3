@@ -49,7 +49,6 @@ DerivedData/
 *.bak
 
 # CMake
-CMake/
 cmake-build-debug/
 cmake-build-release/
 cmake-build-rel-with-debinfo/
