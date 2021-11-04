@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.16.0 FATAL_ERROR)
 
 set(CMAKE_SYSTEM_VERSION 10.0 CACHE STRING "" FORCE)
 
+set (CMAKE_CXX_STANDARD 14)
+
 project(AEC3 C CXX)
 
 ################################################################################
@@ -185,40 +187,76 @@ endif()
 ################################################################################
 # Compile definitions
 ################################################################################
-if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
-    target_compile_definitions(${PROJECT_NAME} PRIVATE
-        "$<$<CONFIG:Debug>:"
-            "_DEBUG"
-        ">"
-        "$<$<CONFIG:Release>:"
-            "DEBUG"
-        ">"
-        "WEBRTC_WIN;"
-        "WIN32;"
-        "_WINDOWS;"
-        "NOMINMAX;"
-        "_CRT_SECURE_NO_WARNINGS;"
-        "_SCL_SECURE_NO_WARNINGS;"
-        "WIN32_LEAN_AND_MEAN;"
-        "_MBCS"
-    )
-elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
-    target_compile_definitions(${PROJECT_NAME} PRIVATE
-        "$<$<CONFIG:Debug>:"
-            "_DEBUG"
-        ">"
-        "$<$<CONFIG:Release>:"
-            "DEBUG"
-        ">"
-        "WEBRTC_WIN;"
-        "WIN32;"
-        "_WINDOWS;"
-        "NOMINMAX;"
-        "_CRT_SECURE_NO_WARNINGS;"
-        "_SCL_SECURE_NO_WARNINGS;"
-        "WIN32_LEAN_AND_MEAN;"
-        "_MBCS"
-    )
+if (APPLE)
+    if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+        target_compile_definitions(${PROJECT_NAME} PRIVATE
+                "$<$<CONFIG:Debug>:"
+                "_DEBUG"
+                ">"
+                "$<$<CONFIG:Release>:"
+                "DEBUG"
+                ">"
+                "WEBRTC_MAC;"
+                "WEBRTC_POSIX;"
+                "_WINDOWS;"
+                "NOMINMAX;"
+                "_CRT_SECURE_NO_WARNINGS;"
+                "_SCL_SECURE_NO_WARNINGS;"
+                "WIN32_LEAN_AND_MEAN;"
+                "_MBCS"
+                )
+    elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
+        target_compile_definitions(${PROJECT_NAME} PRIVATE
+                "$<$<CONFIG:Debug>:"
+                "_DEBUG"
+                ">"
+                "$<$<CONFIG:Release>:"
+                "DEBUG"
+                ">"
+                "WEBRTC_MAC;"
+                "WEBRTC_POSIX;"
+                "_WINDOWS;"
+                "NOMINMAX;"
+                "_CRT_SECURE_NO_WARNINGS;"
+                "_SCL_SECURE_NO_WARNINGS;"
+                "WIN32_LEAN_AND_MEAN;"
+                "_MBCS"
+                )
+    endif()
+elseif(WIN32)
+    if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+        target_compile_definitions(${PROJECT_NAME} PRIVATE
+            "$<$<CONFIG:Debug>:"
+                "_DEBUG"
+            ">"
+            "$<$<CONFIG:Release>:"
+                "DEBUG"
+            ">"
+            "WEBRTC_WIN;"
+            "_WINDOWS;"
+            "NOMINMAX;"
+            "_CRT_SECURE_NO_WARNINGS;"
+            "_SCL_SECURE_NO_WARNINGS;"
+            "WIN32_LEAN_AND_MEAN;"
+            "_MBCS"
+        )
+    elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
+        target_compile_definitions(${PROJECT_NAME} PRIVATE
+            "$<$<CONFIG:Debug>:"
+                "_DEBUG"
+            ">"
+            "$<$<CONFIG:Release>:"
+                "DEBUG"
+            ">"
+            "WEBRTC_WIN;"
+            "_WINDOWS;"
+            "NOMINMAX;"
+            "_CRT_SECURE_NO_WARNINGS;"
+            "_SCL_SECURE_NO_WARNINGS;"
+            "WIN32_LEAN_AND_MEAN;"
+            "_MBCS"
+        )
+    endif()
 endif()
 
 ################################################################################
@@ -297,14 +335,16 @@ target_link_libraries(${PROJECT_NAME} PUBLIC
     base
 )
 
-if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
-    set(ADDITIONAL_LIBRARY_DEPENDENCIES
-        "winmm"
-    )
-elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
-    set(ADDITIONAL_LIBRARY_DEPENDENCIES
-        "winmm"
-    )
+if (WIN32)
+    if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+        set(ADDITIONAL_LIBRARY_DEPENDENCIES
+            "winmm"
+        )
+    elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
+        set(ADDITIONAL_LIBRARY_DEPENDENCIES
+            "winmm"
+        )
+    endif()
 endif()
 target_link_libraries(${PROJECT_NAME} PUBLIC "${ADDITIONAL_LIBRARY_DEPENDENCIES}")
 
@@ -581,40 +621,76 @@ endif()
 ################################################################################
 # Compile definitions
 ################################################################################
-if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
-    target_compile_definitions(${PROJECT_NAME} PRIVATE
-        "$<$<CONFIG:Debug>:"
-            "_DEBUG"
-        ">"
-        "$<$<CONFIG:Release>:"
-            "DEBUG"
-        ">"
-        "WEBRTC_WIN;"
-        "WIN32;"
-        "_WINDOWS;"
-        "NOMINMAX;"
-        "_CRT_SECURE_NO_WARNINGS;"
-        "_SCL_SECURE_NO_WARNINGS;"
-        "WIN32_LEAN_AND_MEAN;"
-        "_MBCS"
-    )
-elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
-    target_compile_definitions(${PROJECT_NAME} PRIVATE
-        "$<$<CONFIG:Debug>:"
-            "_DEBUG"
-        ">"
-        "$<$<CONFIG:Release>:"
-            "DEBUG"
-        ">"
-        "WEBRTC_WIN;"
-        "WIN32;"
-        "_WINDOWS;"
-        "NOMINMAX;"
-        "_CRT_SECURE_NO_WARNINGS;"
-        "_SCL_SECURE_NO_WARNINGS;"
-        "WIN32_LEAN_AND_MEAN;"
-        "_MBCS"
-    )
+if (APPLE)
+    if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+        target_compile_definitions(${PROJECT_NAME} PRIVATE
+                "$<$<CONFIG:Debug>:"
+                "_DEBUG"
+                ">"
+                "$<$<CONFIG:Release>:"
+                "DEBUG"
+                ">"
+                "WEBRTC_MAC;"
+                "WEBRTC_POSIX;"
+                "_WINDOWS;"
+                "NOMINMAX;"
+                "_CRT_SECURE_NO_WARNINGS;"
+                "_SCL_SECURE_NO_WARNINGS;"
+                "WIN32_LEAN_AND_MEAN;"
+                "_MBCS"
+                )
+    elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
+        target_compile_definitions(${PROJECT_NAME} PRIVATE
+                "$<$<CONFIG:Debug>:"
+                "_DEBUG"
+                ">"
+                "$<$<CONFIG:Release>:"
+                "DEBUG"
+                ">"
+                "WEBRTC_MAC;"
+                "WEBRTC_POSIX;"
+                "_WINDOWS;"
+                "NOMINMAX;"
+                "_CRT_SECURE_NO_WARNINGS;"
+                "_SCL_SECURE_NO_WARNINGS;"
+                "WIN32_LEAN_AND_MEAN;"
+                "_MBCS"
+                )
+    endif()
+elseif(WIN32)
+    if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+        target_compile_definitions(${PROJECT_NAME} PRIVATE
+            "$<$<CONFIG:Debug>:"
+                "_DEBUG"
+            ">"
+            "$<$<CONFIG:Release>:"
+                "DEBUG"
+            ">"
+            "WEBRTC_WIN;"
+            "_WINDOWS;"
+            "NOMINMAX;"
+            "_CRT_SECURE_NO_WARNINGS;"
+            "_SCL_SECURE_NO_WARNINGS;"
+            "WIN32_LEAN_AND_MEAN;"
+            "_MBCS"
+        )
+    elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
+        target_compile_definitions(${PROJECT_NAME} PRIVATE
+            "$<$<CONFIG:Debug>:"
+                "_DEBUG"
+            ">"
+            "$<$<CONFIG:Release>:"
+                "DEBUG"
+            ">"
+            "WEBRTC_WIN;"
+            "_WINDOWS;"
+            "NOMINMAX;"
+            "_CRT_SECURE_NO_WARNINGS;"
+            "_SCL_SECURE_NO_WARNINGS;"
+            "WIN32_LEAN_AND_MEAN;"
+            "_MBCS"
+        )
+    endif()
 endif()
 
 ################################################################################
@@ -962,40 +1038,76 @@ endif()
 ################################################################################
 # Compile definitions
 ################################################################################
-if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
-    target_compile_definitions(${PROJECT_NAME} PRIVATE
-        "$<$<CONFIG:Debug>:"
-            "_DEBUG"
-        ">"
-        "$<$<CONFIG:Release>:"
-            "DEBUG"
-        ">"
-        "WEBRTC_WIN;"
-        "WIN32;"
-        "_WINDOWS;"
-        "NOMINMAX;"
-        "_CRT_SECURE_NO_WARNINGS;"
-        "_SCL_SECURE_NO_WARNINGS;"
-        "WIN32_LEAN_AND_MEAN;"
-        "_MBCS"
-    )
-elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
-    target_compile_definitions(${PROJECT_NAME} PRIVATE
-        "$<$<CONFIG:Debug>:"
-            "_DEBUG"
-        ">"
-        "$<$<CONFIG:Release>:"
-            "DEBUG"
-        ">"
-        "WEBRTC_WIN;"
-        "WIN32;"
-        "_WINDOWS;"
-        "NOMINMAX;"
-        "_CRT_SECURE_NO_WARNINGS;"
-        "_SCL_SECURE_NO_WARNINGS;"
-        "WIN32_LEAN_AND_MEAN;"
-        "_MBCS"
-    )
+if (APPLE)
+    if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+        target_compile_definitions(${PROJECT_NAME} PRIVATE
+                "$<$<CONFIG:Debug>:"
+                "_DEBUG"
+                ">"
+                "$<$<CONFIG:Release>:"
+                "DEBUG"
+                ">"
+                "WEBRTC_MAC;"
+                "WEBRTC_POSIX;"
+                "_WINDOWS;"
+                "NOMINMAX;"
+                "_CRT_SECURE_NO_WARNINGS;"
+                "_SCL_SECURE_NO_WARNINGS;"
+                "WIN32_LEAN_AND_MEAN;"
+                "_MBCS"
+                )
+    elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
+        target_compile_definitions(${PROJECT_NAME} PRIVATE
+                "$<$<CONFIG:Debug>:"
+                "_DEBUG"
+                ">"
+                "$<$<CONFIG:Release>:"
+                "DEBUG"
+                ">"
+                "WEBRTC_MAC;"
+                "WEBRTC_POSIX;"
+                "_WINDOWS;"
+                "NOMINMAX;"
+                "_CRT_SECURE_NO_WARNINGS;"
+                "_SCL_SECURE_NO_WARNINGS;"
+                "WIN32_LEAN_AND_MEAN;"
+                "_MBCS"
+                )
+    endif()
+elseif(WIN32)
+    if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+        target_compile_definitions(${PROJECT_NAME} PRIVATE
+            "$<$<CONFIG:Debug>:"
+                "_DEBUG"
+            ">"
+            "$<$<CONFIG:Release>:"
+                "DEBUG"
+            ">"
+            "WEBRTC_WIN;"
+            "_WINDOWS;"
+            "NOMINMAX;"
+            "_CRT_SECURE_NO_WARNINGS;"
+            "_SCL_SECURE_NO_WARNINGS;"
+            "WIN32_LEAN_AND_MEAN;"
+            "_MBCS"
+        )
+    elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
+        target_compile_definitions(${PROJECT_NAME} PRIVATE
+            "$<$<CONFIG:Debug>:"
+                "_DEBUG"
+            ">"
+            "$<$<CONFIG:Release>:"
+                "DEBUG"
+            ">"
+            "WEBRTC_WIN;"
+            "_WINDOWS;"
+            "NOMINMAX;"
+            "_CRT_SECURE_NO_WARNINGS;"
+            "_SCL_SECURE_NO_WARNINGS;"
+            "WIN32_LEAN_AND_MEAN;"
+            "_MBCS"
+        )
+    endif()
 endif()
 
 ################################################################################
@@ -1183,40 +1295,76 @@ endif()
 ################################################################################
 # Compile definitions
 ################################################################################
-if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
-    target_compile_definitions(${PROJECT_NAME} PRIVATE
-        "$<$<CONFIG:Debug>:"
-            "_DEBUG"
-        ">"
-        "$<$<CONFIG:Release>:"
-            "DEBUG"
-        ">"
-        "WEBRTC_WIN;"
-        "WIN32;"
-        "_WINDOWS;"
-        "NOMINMAX;"
-        "_CRT_SECURE_NO_WARNINGS;"
-        "_SCL_SECURE_NO_WARNINGS;"
-        "WIN32_LEAN_AND_MEAN;"
-        "_MBCS"
-    )
-elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
-    target_compile_definitions(${PROJECT_NAME} PRIVATE
-        "$<$<CONFIG:Debug>:"
-            "_DEBUG"
-        ">"
-        "$<$<CONFIG:Release>:"
-            "DEBUG"
-        ">"
-        "WEBRTC_WIN;"
-        "WIN32;"
-        "_WINDOWS;"
-        "NOMINMAX;"
-        "_CRT_SECURE_NO_WARNINGS;"
-        "_SCL_SECURE_NO_WARNINGS;"
-        "WIN32_LEAN_AND_MEAN;"
-        "_MBCS"
-    )
+if (APPLE)
+    if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+        target_compile_definitions(${PROJECT_NAME} PRIVATE
+                "$<$<CONFIG:Debug>:"
+                "_DEBUG"
+                ">"
+                "$<$<CONFIG:Release>:"
+                "DEBUG"
+                ">"
+                "WEBRTC_MAC;"
+                "WEBRTC_POSIX;"
+                "_WINDOWS;"
+                "NOMINMAX;"
+                "_CRT_SECURE_NO_WARNINGS;"
+                "_SCL_SECURE_NO_WARNINGS;"
+                "WIN32_LEAN_AND_MEAN;"
+                "_MBCS"
+                )
+    elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
+        target_compile_definitions(${PROJECT_NAME} PRIVATE
+                "$<$<CONFIG:Debug>:"
+                "_DEBUG"
+                ">"
+                "$<$<CONFIG:Release>:"
+                "DEBUG"
+                ">"
+                "WEBRTC_MAC;"
+                "WEBRTC_POSIX;"
+                "_WINDOWS;"
+                "NOMINMAX;"
+                "_CRT_SECURE_NO_WARNINGS;"
+                "_SCL_SECURE_NO_WARNINGS;"
+                "WIN32_LEAN_AND_MEAN;"
+                "_MBCS"
+                )
+    endif()
+elseif(WIN32)
+    if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+        target_compile_definitions(${PROJECT_NAME} PRIVATE
+            "$<$<CONFIG:Debug>:"
+                "_DEBUG"
+            ">"
+            "$<$<CONFIG:Release>:"
+                "DEBUG"
+            ">"
+            "WEBRTC_WIN;"
+            "_WINDOWS;"
+            "NOMINMAX;"
+            "_CRT_SECURE_NO_WARNINGS;"
+            "_SCL_SECURE_NO_WARNINGS;"
+            "WIN32_LEAN_AND_MEAN;"
+            "_MBCS"
+        )
+    elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
+        target_compile_definitions(${PROJECT_NAME} PRIVATE
+            "$<$<CONFIG:Debug>:"
+                "_DEBUG"
+            ">"
+            "$<$<CONFIG:Release>:"
+                "DEBUG"
+            ">"
+            "WEBRTC_WIN;"
+            "_WINDOWS;"
+            "NOMINMAX;"
+            "_CRT_SECURE_NO_WARNINGS;"
+            "_SCL_SECURE_NO_WARNINGS;"
+            "WIN32_LEAN_AND_MEAN;"
+            "_MBCS"
+        )
+    endif()
 endif()
 
 ################################################################################
@@ -1298,14 +1446,16 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
     base
 )
 
-if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
-    set(ADDITIONAL_LIBRARY_DEPENDENCIES
-        "winmm"
-    )
-elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
-    set(ADDITIONAL_LIBRARY_DEPENDENCIES
-        "winmm"
-    )
+if (WIN32)
+    if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x64")
+        set(ADDITIONAL_LIBRARY_DEPENDENCIES
+            "winmm"
+        )
+    elseif("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
+        set(ADDITIONAL_LIBRARY_DEPENDENCIES
+            "winmm"
+        )
+    endif()
 endif()
 target_link_libraries(${PROJECT_NAME} PRIVATE "${ADDITIONAL_LIBRARY_DEPENDENCIES}")
 

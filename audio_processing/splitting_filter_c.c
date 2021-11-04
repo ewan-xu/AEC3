@@ -15,6 +15,9 @@
 
 #include "rtc_base/checks.h"
 #include <stdint.h>
+#ifdef __APPLE__
+#include <stddef.h>
+#endif
 
 // Maximum number of samples in a low/high-band frame.
 enum
