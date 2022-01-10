@@ -11,4 +11,4 @@ Visual Studio 2015 or higher, or CMake
 Use CMake
 
 ## Linux
-https://github.com/xishaoheng/webrtc_AEC3
+https://gitlab.freedesktop.org/pulseaudio/webrtc-audio-processing
