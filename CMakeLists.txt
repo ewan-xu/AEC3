@@ -88,32 +88,6 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 # Sub-projects
 ################################################################################
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set(PROJECT_NAME api)
 
 ################################################################################
@@ -347,32 +321,6 @@ if (WIN32)
     endif()
 endif()
 target_link_libraries(${PROJECT_NAME} PUBLIC "${ADDITIONAL_LIBRARY_DEPENDENCIES}")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 set(PROJECT_NAME AEC3)
 
@@ -783,32 +731,6 @@ if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
         ">"
     )
 endif()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 set(PROJECT_NAME base)
 
