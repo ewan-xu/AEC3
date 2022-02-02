@@ -6,6 +6,10 @@ android {
     compileSdk 31
 
     defaultConfig {
+        ndk {
+            abiFilters 'arm64-v8a', 'armeabi-v7a'
+        }
+
         applicationId "com.synervoz.aec3"
         minSdk 21
         targetSdk 31
