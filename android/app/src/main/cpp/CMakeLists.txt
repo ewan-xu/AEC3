@@ -102,7 +102,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         "${CMAKE_CURRENT_SOURCE_DIR}/base;"
         "${CMAKE_CURRENT_SOURCE_DIR}/base/abseil;"
         "${CMAKE_CURRENT_SOURCE_DIR}/base/jsoncpp/include;"
-        "${CMAKE_CURRENT_SOURCE_DIR}/../../../../cpu_features-0.6.0/ndk_compat"
+        "${CMAKE_CURRENT_SOURCE_DIR}/cpu_features-0.6.0/ndk_compat"
         )
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE
@@ -322,7 +322,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         "${CMAKE_CURRENT_SOURCE_DIR}/base/jsoncpp/include;"
         "${CMAKE_CURRENT_SOURCE_DIR}/audio_processing;"
         "${CMAKE_CURRENT_SOURCE_DIR}/audio_processing/aec3;"
-        "${CMAKE_CURRENT_SOURCE_DIR}/../../../../cpu_features-0.6.0/ndk_compat"
+        "${CMAKE_CURRENT_SOURCE_DIR}/cpu_features-0.6.0/ndk_compat"
         )
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE
@@ -535,7 +535,7 @@ target_include_directories(${PROJECT_NAME} PUBLIC
         "${CMAKE_CURRENT_SOURCE_DIR}/base;"
         "${CMAKE_CURRENT_SOURCE_DIR}/base/abseil;"
         "${CMAKE_CURRENT_SOURCE_DIR}/base/jsoncpp/include;"
-        "${CMAKE_CURRENT_SOURCE_DIR}/../../../../cpu_features-0.6.0/ndk_compat"
+        "${CMAKE_CURRENT_SOURCE_DIR}/cpu_features-0.6.0/ndk_compat"
         )
 
 target_compile_definitions(${PROJECT_NAME} PRIVATE
