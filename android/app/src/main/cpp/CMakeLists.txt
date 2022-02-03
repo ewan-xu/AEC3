@@ -18,7 +18,6 @@ project("aec3")
 # You can define multiple libraries, and CMake builds them for you.
 # Gradle automatically packages shared libraries with your APK.
 
-
 add_library( # Sets the name of the library.
         aec3-shared
 
@@ -26,18 +25,10 @@ add_library( # Sets the name of the library.
         SHARED
 
         # Provides a relative path to your source file(s).
-        native-lib.cpp
-        PinPointAEC3AndroidAPI.cpp
         PinPointAEC3AndroidAPI.h
+        PinPointAEC3AndroidAPI.cpp
+        native-lib.cpp
         )
-
-add_library(
-        aec3-static
-        STATIC
-        native-lib.cpp
-        PinPointAEC3AndroidAPI.cpp
-        PinPointAEC3AndroidAPI.h
-)
 
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by
@@ -58,7 +49,6 @@ find_library( # Sets the name of the path variable.
 
 target_link_libraries( # Specifies the target library.
         aec3-shared
-        aec3-static
         api
         audioprocessing
         base

@@ -124,7 +124,9 @@ const size_t SincResampler::kKernelSize;
 // If we know the minimum architecture at compile time, avoid CPU detection.
 #if defined(WEBRTC_ARCH_X86_FAMILY)
 #if defined(__SSE2__)
-#define CONVOLVE_FUNC Convolve_SSE
+//TODO: Resolve why SSE no longer works with current Android toolchain
+#define CONVOLVE_FUNC Convolve_C
+//#define CONVOLVE_FUNC Convolve_SSE
 void SincResampler::InitializeCPUSpecificFeatures() {}
 #else
 // x86 CPU detection required.  Function will be set by

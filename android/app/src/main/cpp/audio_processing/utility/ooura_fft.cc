@@ -315,7 +315,9 @@ static void rftbsub_128_C(float* a) {
 
 OouraFft::OouraFft() {
 #if defined(WEBRTC_ARCH_X86_FAMILY)
-  use_sse2_ = (WebRtc_GetCPUInfo(kSSE2) != 0);
+  //use_sse2_ = (WebRtc_GetCPUInfo(kSSE2) != 0);
+  //TODO: Resolve why SSE not available with current toolchain for x86/x86_64
+  use_sse2_ = false;
 #else
   use_sse2_ = false;
 #endif
@@ -346,11 +348,11 @@ void OouraFft::cft1st_128(float* a) const {
 #elif defined(WEBRTC_HAS_NEON)
   cft1st_128_neon(a);
 #elif defined(WEBRTC_ARCH_X86_FAMILY)
-  if (use_sse2_) {
-    cft1st_128_SSE2(a);
-  } else {
+  //if (use_sse2_) {
+  //  cft1st_128_SSE2(a);
+  //} else {
     cft1st_128_C(a);
-  }
+  //}
 #else
   cft1st_128_C(a);
 #endif
@@ -361,11 +363,11 @@ void OouraFft::cftmdl_128(float* a) const {
 #elif defined(WEBRTC_HAS_NEON)
   cftmdl_128_neon(a);
 #elif defined(WEBRTC_ARCH_X86_FAMILY)
-  if (use_sse2_) {
-    cftmdl_128_SSE2(a);
-  } else {
+  //if (use_sse2_) {
+  //  cftmdl_128_SSE2(a);
+  //} else {
     cftmdl_128_C(a);
-  }
+  //}
 #else
   cftmdl_128_C(a);
 #endif
@@ -376,11 +378,11 @@ void OouraFft::rftfsub_128(float* a) const {
 #elif defined(WEBRTC_HAS_NEON)
   rftfsub_128_neon(a);
 #elif defined(WEBRTC_ARCH_X86_FAMILY)
-  if (use_sse2_) {
-    rftfsub_128_SSE2(a);
-  } else {
+  //if (use_sse2_) {
+  //  rftfsub_128_SSE2(a);
+  //} else {
     rftfsub_128_C(a);
-  }
+  //}
 #else
   rftfsub_128_C(a);
 #endif
@@ -392,11 +394,11 @@ void OouraFft::rftbsub_128(float* a) const {
 #elif defined(WEBRTC_HAS_NEON)
   rftbsub_128_neon(a);
 #elif defined(WEBRTC_ARCH_X86_FAMILY)
-  if (use_sse2_) {
-    rftbsub_128_SSE2(a);
-  } else {
+  //if (use_sse2_) {
+  //  rftbsub_128_SSE2(a);
+  //} else {
     rftbsub_128_C(a);
-  }
+  //}
 #else
   rftbsub_128_C(a);
 #endif

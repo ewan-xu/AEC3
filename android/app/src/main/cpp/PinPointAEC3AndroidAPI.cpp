@@ -82,23 +82,22 @@ private:
     }
 };
 
-
-void* PinPointAEC3Create(int sampleRate) {
+void* PinPointAEC3AndroidCreate(int sampleRate) {
     PinPointAEC3* aec = new PinPointAEC3(sampleRate);
     return aec;
 }
 
-void PinPointAEC3Delete(void *object) {
+void PinPointAEC3AndroidDestroy(void *object) {
     PinPointAEC3 *aec = (PinPointAEC3*)object;
     delete aec;
 }
 
-void PinPointAEC3ProcessCapture(void* object, float* audioBuffer, int numberOfFrames) {
+void PinPointAEC3AndroidProcessCapture(void* object, float* audioBuffer, int numberOfFrames) {
     PinPointAEC3 *aec = (PinPointAEC3*)object;
     aec->processCapture(audioBuffer, numberOfFrames);
 }
 
-void PinPointAEC3AnalyzeRender(void* object, float* audioBuffer, int numberOfFrames) {
+void PinPointAEC3AndroidAnalyzeRender(void* object, float* audioBuffer, int numberOfFrames) {
     PinPointAEC3 *aec = (PinPointAEC3*)object;
     aec->analyzeRender(audioBuffer, numberOfFrames);
 }
