@@ -1,5 +1,4 @@
 #include "api/echo_canceller3_factory.h"
-#include "api/echo_canceller3_config.h"
 #include "audio_processing/include/audio_processing.h"
 #include "audio_processing/audio_buffer.h"
 #include "audio_processing/high_pass_filter.h"

@@ -4,7 +4,14 @@ set(CMAKE_SYSTEM_VERSION 10.0 CACHE STRING "" FORCE)
 
 set (CMAKE_CXX_STANDARD 14)
 
+#set(CMAKE_BUILD_TYPE "Release")
+
 project(AEC3 C CXX)
+
+if(APPLE)
+    set(CMAKE_OSX_DEPLOYMENT_TARGET "10.7")
+    set(CMAKE_CXX_FLAGS "-stdlib=libc++")
+endif()
 
 ################################################################################
 # Set target arch type if empty. Visual studio solution generator provides it.
