@@ -1110,6 +1110,13 @@ if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
         ">"
     )
 endif()
+
+if (APPLE)
+    set(ADDITIONAL_LIBRARY_DEPENDENCIES
+            "-framework CoreFoundation"
+            ${ADDITIONAL_LIBRARY_DEPENDENCIES})
+endif()
+
 target_link_libraries(${PROJECT_NAME} PUBLIC "${ADDITIONAL_LIBRARY_DEPENDENCIES}")
 
 if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
