@@ -12,10 +12,10 @@ extern "C"
 {
 #endif
 
-__attribute__(( visibility("default") ))  void* PinPointAEC3AndroidCreate(int sampleRate);
-__attribute__(( visibility("default") ))  void PinPointAEC3AndroidDestroy(void *object);
-__attribute__(( visibility("default") ))  void PinPointAEC3AndroidProcessCapture(void* object, float* audioBuffer, int numberOfFrames);
-__attribute__(( visibility("default") ))  void PinPointAEC3AndroidAnalyzeRender(void* object, float* audioBuffer, int numberOfFrames);
+__attribute__(( visibility("default") ))  void* PinPointAEC3Create(int sampleRate);
+__attribute__(( visibility("default") ))  void PinPointAEC3Destroy(void *object);
+__attribute__(( visibility("default") ))  void PinPointAEC3ProcessCapture(void* object, float* audioBuffer, int numberOfFrames);
+__attribute__(( visibility("default") ))  void PinPointAEC3AnalyzeRender(void* object, float* audioBuffer, int numberOfFrames);
 
 #ifdef __cplusplus
 }
