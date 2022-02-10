@@ -1,0 +1,3 @@
+cmake -G Xcode -B iOS \
+    -DCMAKE_SYSTEM_NAME=iOS \
+    -DCMAKE_OSX_DEPLOYMENT_TARGET=11.0

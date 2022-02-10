@@ -1,0 +1,6 @@
+/Users/catdev/repos/AEC3/iOS/CMakeFiles/api.dir
+/Users/catdev/repos/AEC3/iOS/CMakeFiles/AEC3.dir
+/Users/catdev/repos/AEC3/iOS/CMakeFiles/base.dir
+/Users/catdev/repos/AEC3/iOS/CMakeFiles/demo.dir
+/Users/catdev/repos/AEC3/iOS/CMakeFiles/ALL_BUILD.dir
+/Users/catdev/repos/AEC3/iOS/CMakeFiles/ZERO_CHECK.dir
