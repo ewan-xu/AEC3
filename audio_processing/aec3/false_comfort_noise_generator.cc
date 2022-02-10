@@ -156,6 +156,18 @@ void FalseComfortNoiseGenerator::Compute(
     // Limit the noise to a floor matching a WGN input of -96 dBFS.
     constexpr float kNoiseFloor = 17.1267f;
 
+      for (size_t ch = 0; ch < num_capture_channels_; ++ch) {
+          for (auto& n : N2_[ch]) {
+              n = kNoiseFloor;
+          }
+          if (N2_initial_) {
+              for (auto& n : (*N2_initial_)[ch]) {
+                  n = kNoiseFloor;
+              }
+          }
+      }
+    //Original problematic code kept here for posterity
+    /*
     for (size_t ch = 0; ch < num_capture_channels_; ++ch) {
       for (auto& n : N2_[ch]) {
         n = std::max(n, kNoiseFloor);
@@ -166,14 +178,15 @@ void FalseComfortNoiseGenerator::Compute(
         }
       }
     }
+    */
   }
 
   // Choose N2 estimate to use.
   const auto& N2 = N2_initial_ ? (*N2_initial_) : N2_;
 
   for (size_t ch = 0; ch < num_capture_channels_; ++ch) {
-    //GenerateComfortNoise(optimization_, N2[ch], &seed_, &lower_band_noise[ch],
-    //                     &upper_band_noise[ch]);
+    GenerateComfortNoise(optimization_, N2[ch], &seed_, &lower_band_noise[ch],
+                         &upper_band_noise[ch]);
   }
 }
 

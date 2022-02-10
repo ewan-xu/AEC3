@@ -407,6 +407,8 @@ set(audio_processing__aec3
     "audio_processing/aec3/erl_estimator.h"
     "audio_processing/aec3/erle_estimator.cc"
     "audio_processing/aec3/erle_estimator.h"
+    "audio_processing/aec3/false_comfort_noise_generator.cc"
+    "audio_processing/aec3/false_comfort_noise_generator.h"
     "audio_processing/aec3/fft_buffer.cc"
     "audio_processing/aec3/fft_buffer.h"
     "audio_processing/aec3/fft_data.h"
@@ -1133,32 +1135,6 @@ if("${CMAKE_VS_PLATFORM_NAME}" STREQUAL "x86")
         ">"
     )
 endif()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 set(PROJECT_NAME demo)
 

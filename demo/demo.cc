@@ -81,7 +81,7 @@ int main(int argc, char* argv[])
 	if (ref_format != rec_format ||
 		ref_channels != rec_channels ||
 		ref_sample_rate != rec_sample_rate ||
-		ref_bits_per_sample != ref_bits_per_sample) 
+		ref_bits_per_sample != rec_bits_per_sample)
 	{
 		cerr << "ref file format != rec file format" << endl;
 		return -1;
