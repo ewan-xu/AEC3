@@ -58,3 +58,6 @@ cmake-build-rel-with-debinfo/
 
 # Custom Output Dir
 output/
+
+# Generated iOS Dir
+iOS/
