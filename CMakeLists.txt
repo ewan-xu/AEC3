@@ -447,6 +447,8 @@ set(audio_processing__aec3
     "audio_processing/aec3/reverb_model.h"
     "audio_processing/aec3/reverb_model_estimator.cc"
     "audio_processing/aec3/reverb_model_estimator.h"
+    "audio_processing/aec3/scaled_comfort_noise_generator.cc"
+    "audio_processing/aec3/scaled_comfort_noise_generator.h"
     "audio_processing/aec3/shadow_filter_update_gain.cc"
     "audio_processing/aec3/shadow_filter_update_gain.h"
     "audio_processing/aec3/signal_dependent_erle_estimator.cc"

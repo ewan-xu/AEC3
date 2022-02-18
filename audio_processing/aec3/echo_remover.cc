@@ -22,7 +22,7 @@
 #include "audio_processing/aec3/aec3_fft.h"
 #include "audio_processing/aec3/aec_state.h"
 //#include "audio_processing/aec3/comfort_noise_generator.h"
-#include "audio_processing/aec3/false_comfort_noise_generator.h"
+#include "audio_processing/aec3/scaled_comfort_noise_generator.h"
 #include "audio_processing/aec3/echo_path_variability.h"
 #include "audio_processing/aec3/echo_remover_metrics.h"
 #include "audio_processing/aec3/fft_data.h"
@@ -151,7 +151,7 @@ class EchoRemoverImpl final : public EchoRemover {
   const bool use_shadow_filter_output_;
   Subtractor subtractor_;
   SuppressionGain suppression_gain_;
-  FalseComfortNoiseGenerator fcng_;
+  ScaledComfortNoiseGenerator scng_;
   SuppressionFilter suppression_filter_;
   RenderSignalAnalyzer render_signal_analyzer_;
   ResidualEchoEstimator residual_echo_estimator_;
@@ -201,7 +201,7 @@ EchoRemoverImpl::EchoRemoverImpl(const EchoCanceller3Config& config,
                         optimization_,
                         sample_rate_hz,
                         num_capture_channels),
-      fcng_(optimization_, num_capture_channels_),
+      scng_(optimization_, num_capture_channels_),
       suppression_filter_(optimization_,
                           sample_rate_hz_,
                           num_capture_channels_),
@@ -395,7 +395,7 @@ void EchoRemoverImpl::ProcessCapture(
   residual_echo_estimator_.Estimate(aec_state_, *render_buffer, S2_linear, Y2,
                                     R2);
 
-  fcng_.Compute(aec_state_.SaturatedCapture(), Y2, comfort_noise,
+  scng_.Compute(aec_state_.SaturatedCapture(), Y2, comfort_noise,
                high_band_comfort_noise);
 
   if (aec_state_.UsableLinearEstimate()) {
@@ -415,14 +415,14 @@ void EchoRemoverImpl::ProcessCapture(
   float high_bands_gain;
   std::array<float, kFftLengthBy2Plus1> G;
   suppression_gain_.GetGain(nearend_spectrum, echo_spectrum, R2,
-                            fcng_.NoiseSpectrum(), render_signal_analyzer_,
+                            scng_.NoiseSpectrum(), render_signal_analyzer_,
                             aec_state_, x, &high_bands_gain, &G);
 
   suppression_filter_.ApplyGain(comfort_noise, high_band_comfort_noise, G,
                                 high_bands_gain, Y_fft, y);
 
   // Update the metrics.
-  metrics_.Update(aec_state_, fcng_.NoiseSpectrum()[0], G);
+  metrics_.Update(aec_state_, scng_.NoiseSpectrum()[0], G);
 
   // Debug outputs for the purpose of development and analysis.
   data_dumper_->DumpWav("aec3_echo_estimate", kBlockSize,
@@ -430,7 +430,7 @@ void EchoRemoverImpl::ProcessCapture(
   data_dumper_->DumpRaw("aec3_output", (*y)[0][0]);
   data_dumper_->DumpRaw("aec3_narrow_render",
                         render_signal_analyzer_.NarrowPeakBand() ? 1 : 0);
-  data_dumper_->DumpRaw("aec3_N2", fcng_.NoiseSpectrum()[0]);
+  data_dumper_->DumpRaw("aec3_N2", scng_.NoiseSpectrum()[0]);
   data_dumper_->DumpRaw("aec3_suppressor_gain", G);
   data_dumper_->DumpWav("aec3_output",
                         rtc::ArrayView<const float>(&(*y)[0][0][0], kBlockSize),
