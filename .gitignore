@@ -61,3 +61,6 @@ output/
 
 # Generated iOS Dir
 iOS/
+
+# Generated macOS Dir
+macOS/

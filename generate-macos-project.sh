@@ -1,0 +1,3 @@
+cmake -G Xcode -B macOS \
+    -DCMAKE_SYSTEM_NAME=Darwin \
+    -DCMAKE_OSX_DEPLOYMENT_TARGET=10.13
