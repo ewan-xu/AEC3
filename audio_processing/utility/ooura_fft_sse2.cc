@@ -8,17 +8,17 @@
  *  be found in the AUTHORS file in the root of the source tree.
  */
 
+#include "rtc_base/system/arch.h"
+#if defined(WEBRTC_ARCH_X86_FAMILY)
+
 #include <emmintrin.h>
 #include <xmmintrin.h>
 
 #include "audio_processing/utility/ooura_fft.h"
 #include "audio_processing/utility/ooura_fft_tables_common.h"
 #include "audio_processing/utility/ooura_fft_tables_neon_sse2.h"
-#include "rtc_base/system/arch.h"
 
 namespace webrtc {
-
-#if defined(WEBRTC_ARCH_X86_FAMILY)
 
 namespace {
 // These intrinsics were unavailable before VS 2008.
@@ -434,6 +434,9 @@ void rftbsub_128_SSE2(float* a) {
   }
   a[65] = -a[65];
 }
-#endif
+
 
 }  // namespace webrtc
+
+
+#endif

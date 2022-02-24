@@ -59,8 +59,7 @@ cmake-build-rel-with-debinfo/
 # Custom Output Dir
 output/
 
-# Generated iOS Dir
-iOS/
-
-# Generated macOS Dir
-macOS/
+iOS/AEC3.build
+iOS/CMake*
+macOS/AEC3.build
+macOS/CMake*

@@ -11,6 +11,9 @@
 // Modified from the Chromium original:
 // src/media/base/simd/sinc_resampler_sse.cc
 
+#include "rtc_base/system/arch.h"
+#if defined(WEBRTC_ARCH_X86_FAMILY)
+
 #include <stddef.h>
 #include <stdint.h>
 #include <xmmintrin.h>
@@ -61,3 +64,5 @@ float SincResampler::Convolve_SSE(const float* input_ptr,
 }
 
 }  // namespace webrtc
+
+#endif
